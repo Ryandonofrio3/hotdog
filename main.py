@@ -30,6 +30,7 @@ async function handleFile(file) {
     res.textContent = 'Analyzing...';
     res.className = 'text-4xl font-bold text-center my-6 text-gray-500';
     confidence.textContent = '';
+    const start_time = Date.now();
     const preds = await classifier(img.src);
     URL.revokeObjectURL(img.src);
     const isHotdog = preds.slice(0, 3).some(p => p.label.toLowerCase().includes('hotdog') || p.label.toLowerCase().includes('hot dog'));
@@ -37,6 +38,9 @@ async function handleFile(file) {
     res.className = `text-4xl font-bold text-center my-6 ${isHotdog ? 'text-green-500 animate-pulse' : 'text-red-500'}`;
     const topPred = preds[0];
     confidence.textContent = `Top prediction: ${topPred.label} (${(topPred.score * 100).toFixed(1)}%)`;
+    const end_time = Date.now();
+    const duration = (end_time - start_time) / 1000;
+    confidence.textContent += `\nTime taken: ${duration.toFixed(2)} seconds`;
 }
 
 upload.onclick = () => inp.click();
