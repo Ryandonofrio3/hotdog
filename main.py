@@ -46,5 +46,4 @@ upload.ondrop = e => { e.preventDefault(); handleFile(e.dataTransfer.files[0]); 
         )
     )
 
-if __name__ == "__main__": 
-    serve()
+serve()

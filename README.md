@@ -1,57 +1,40 @@
-# 🌭 Hot Dog or Not Hot Dog
+# FastHTML Boilerplate
 
-A blazing-fast image recognition app built with FastHTML and Transformers.js in under 100 lines of code! 
+Deploy your [FastHTML](https://fastht.ml/) project to Vercel with zero configuration.
 
-## ✨ Features
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/fasthtml&template=fasthtml)
 
-- **Zero API calls**: Runs MobileNet directly in your browser
-- **Lightning fast**: Instant predictions after model loads
-- **No server processing**: All AI happens client-side
-- **Mobile-friendly**: Drag & drop or click to upload
-- **Confidence scores**: Shows prediction accuracy
+_Live Example: https://fasthtml-template.vercel.app_
 
-## 🚀 How it Works
+Visit the [FastHTML documentation](https://docs.fastht.ml/) to learn more.
 
-1. **Browser-based ML**: Uses Transformers.js to run MobileNet v2 locally
-2. **Smart detection**: Searches for hot dog keywords in image classifications
-3. **Instant results**: No waiting for server responses
-4. **Offline-ready**: Works without internet after initial load
+## Getting Started
 
-## 📦 Deploy to Vercel
+Install the required dependencies:
 
-1. **Clone and push** to GitHub
-2. **Connect to Vercel** and deploy
-3. **Done!** Your app is live
-
-Or use Vercel CLI:
 ```bash
-vercel --prod
+pip install -r requirements.txt
 ```
 
-## 🏃 Run Locally
+## Running Locally
+
+Start the development server on http://0.0.0.0:5001
 
 ```bash
-# Install dependencies
-pip install fasthtml uvicorn
-
-# Run the app
 python main.py
 ```
 
-Visit `http://localhost:5001` and start classifying images!
+When you make changes to your project, the server will automatically reload.
 
-## 🧠 Technical Details
+## Deploying to Vercel
 
-- **Model**: MobileNet v2 (lightweight, ~14MB)
-- **Framework**: FastHTML for the web interface
-- **ML**: Transformers.js for browser-based inference
-- **Deployment**: Vercel serverless functions
+Deploy your project to Vercel with the following command:
 
-## 🎯 Accuracy
+```bash
+npm install -g vercel
+vercel --prod
+```
 
-The app detects hot dogs by looking for keywords like:
-- "hot dog", "hotdog", "sausage", "frankfurter", "wiener", "bratwurst"
+Or `git push` to your repostory with our [git integration](https://vercel.com/docs/deployments/git).
 
-Works best with clear images of food items!
-
-Built to showcase how simple modern AI deployment can be. 🤖
+To view the source code for this template, [visit the example repository](https://github.com/vercel/vercel/tree/main/examples/fasthtml).
